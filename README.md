@@ -92,6 +92,9 @@ from #Cohort_Index
 ```
 
 ![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/282f5113-6310-4fa0-9f94-b61fa36a9790)
+
+
+
 ![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/eae048a2-7b59-4b9b-a2de-c5711977d063)
 
 
