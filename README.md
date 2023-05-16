@@ -56,7 +56,7 @@ group by Customer_Id
 
 
 ## 3rd Temp Table ( #Cohort_Index )
-Make the Cohort Index to see the age Transaction of each Customer_id
+Make the Cohort Index to see the age Transaction of each Customer_id by joining the #CleanedData table and #Retention Table on Customer_id 
 
 ```
 
