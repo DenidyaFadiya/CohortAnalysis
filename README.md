@@ -15,7 +15,7 @@ I will be analyzing Time-Based analysis for this Cohort Project Analysis.
 In this Cohort Analysis I will be using bunch of Temp Table Functions for easier analysis.
 
 ## Full Query for Cohort Analysis Project
-**Check the Full Query for Data Cleaning Project [here](https://github.com/DenidyaFadiya/Cohort_Analysis_PakistanECommerce/blob/main/Full%20Query%20-%20Cohort%20Analysis%20Pakistan%20E-Commerce).**
+**Check the Full Query for Cohort Analysis Project [here](https://github.com/DenidyaFadiya/Cohort_Analysis_PakistanECommerce/blob/main/Full%20Query%20-%20Cohort%20Analysis%20Pakistan%20E-Commerce).**
 
 **Tableau Interactive Dashboard [here](https://public.tableau.com/app/profile/denidya.fadiya/viz/CohortAnalysisPakistane-commerce/Dashboard1).**
 
