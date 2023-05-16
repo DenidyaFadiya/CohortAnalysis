@@ -21,10 +21,10 @@ In this Cohort Analysis I will be using bunch of Temp Table Functions for easier
 
 In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/zusmani/pakistans-largest-ecommerce-dataset).
 
+## Cohort Analysis Project
 
 ## 1st Temp Table (#CleanedData)
 
-## Cohort Analysis Project
 This is a Time-Based Project analysis to see the behaviour of the customers
 
 ### Checking Duplicate Data
