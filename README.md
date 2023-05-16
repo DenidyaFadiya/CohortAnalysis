@@ -21,6 +21,9 @@ In this Cohort Analysis I will be using bunch of Temp Table Functions for easier
 
 In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/zusmani/pakistans-largest-ecommerce-dataset).
 
+## Cohort Analysis Project
+This is a Time-Based Project analysis to see the behaviour of the customers
+
 ### Checking Duplicate Data
 Check any possible duplicate data using dup_flag function, if the dup_flag shows >1 meaning the data is duplicate. Hence why we need to filter the data using dup_flag = ‘1’.
 
