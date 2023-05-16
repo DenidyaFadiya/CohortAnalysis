@@ -21,6 +21,9 @@ In this Cohort Analysis I will be using bunch of Temp Table Functions for easier
 
 In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/zusmani/pakistans-largest-ecommerce-dataset).
 
+
+## 1st Temp Table (#CleanedData)
+
 ## Cohort Analysis Project
 This is a Time-Based Project analysis to see the behaviour of the customers
 
@@ -29,9 +32,6 @@ Check any possible duplicate data using dup_flag function, if the dup_flag shows
 
 ### Count the data with the same Customer_id to see the transactions per Customer_id
 From the table each customer’s starts with 1 and every count_data will calculate each time the transactions happened. 
-
-
-## 1st Temp Table (#CleanedData)
 
 ```
 with a as
