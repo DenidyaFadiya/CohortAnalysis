@@ -17,17 +17,17 @@ Check any possible duplicate data using dup_flag function, if the dup_flag shows
 From the table each customer’s starts with 1 and every count_data will calculate each time the transactions happened. 
  
  ![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/7705f6c5-024f-4323-bb88-bf3b4ba81049)
-![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/eb2f3f35-76a0-4f38-b388-95c12c67a068)
 
 
-## Make temporary table so we don’t have to call the CTE over and over again
+
+## I am going to make temporary table so we don’t have to call the CTE over and over again
+
 ## 1st Temp Table (#CleanedData)
  ![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/97b42611-3e0d-473f-b87e-1b834cd01057)
 
+![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/eb2f3f35-76a0-4f38-b388-95c12c67a068)
 
 ## See the first transaction of each Customer_id and see the cohort date as per transaction
- ![image](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/27328ac0-9d64-43ef-9a17-a70129796fac)
-
 
 ## 2nd Temp Table (#Retention)
 
