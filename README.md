@@ -5,8 +5,9 @@
   <img width="550" height="400" src="![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/f9bc1cf3-3940-4f25-a7f6-fc55073934c6)">
 </p>
 
-
-![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/86e9077a-3945-4e58-8ff2-bbb93821309e)
+<p align="center">
+  <img width="550" height="400" src="
+![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/86e9077a-3945-4e58-8ff2-bbb93821309e)">
 
 This Project I will be analyzing customer retention rate using cohort analysis
 
