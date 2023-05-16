@@ -5,6 +5,9 @@
   <img width="550" height="400" src="![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/f9bc1cf3-3940-4f25-a7f6-fc55073934c6)">
 </p>
 
+
+![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/86e9077a-3945-4e58-8ff2-bbb93821309e)
+
 This Project I will be analyzing customer retention rate using cohort analysis
 
 Cohort analysis is a behavioral analytics to see the customer behavior that shares the common criteria within a range of time. This analysis is usually used to give the insight on the customer base, to help the users to determine the most suitable market for the product launched. Cohort analysis works by breaking the raw data into related group before analysis. Cohort analysis can be classified into 3 types ; Time-Based, Segment-Based, Size-Based analysis. 
