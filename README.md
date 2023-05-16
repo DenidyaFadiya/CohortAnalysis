@@ -16,7 +16,6 @@ Check any possible duplicate data using dup_flag function, if the dup_flag shows
 ### Count the data with the same Customer_id to see the transactions per Customer_id
 From the table each customer’s starts with 1 and every count_data will calculate each time the transactions happened. 
 
-## I am going to make temporary table so we don’t have to call the CTE over and over again
 
 ## 1st Temp Table (#CleanedData)
 
