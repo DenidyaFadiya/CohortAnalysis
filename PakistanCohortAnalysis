@@ -1,0 +1,214 @@
+SQL Project - Cohort Analysis
+
+Pakistan E-Commerce 
+
+
+--- CTE, filter grand_total > 0
+
+with a as (
+	select *
+	from Ecom
+	where grand_total > 0
+)
+select *
+from a
+
+
+
+----duplicate check (2 means duplicate)
+
+
+with a as 
+(
+	select *,
+	ROW_NUMBER() over (partition by customer_id, item_id, quantity order by datecreated)dup_flag,
+	ROW_NUMBER() over (partition by customer_id order by datecreated) as count_data
+	from ecom
+	where grand_total > 0
+)
+select *
+from a
+
+
+---check the amount of duplicate 
+
+with a as
+(
+select *,
+	ROW_NUMBER() over (partition by customer_id, item_id, quantity order by datecreated)dup_flag,
+	ROW_NUMBER() over (partition by customer_id order by datecreated) as count_data
+	from ecom
+	where grand_total > 0
+) select *
+from a 
+where dup_flag > 1
+
+
+
+----filter duplicate = 1
+
+with a as
+(
+select *,
+	ROW_NUMBER() over (partition by customer_id, item_id, quantity order by datecreated)dup_flag,
+	ROW_NUMBER() over (partition by customer_id order by datecreated) as count_data
+	from ecom
+	where grand_total > 0
+) select *
+from a 
+where dup_flag = 1
+
+
+
+--temp table so we dont have to call all cte's
+
+
+with a as
+(
+select *,
+	ROW_NUMBER() over (partition by customer_id, item_id, quantity order by datecreated)dup_flag,
+	ROW_NUMBER() over (partition by customer_id order by datecreated) as count_data
+	from ecom
+	where grand_total > 0
+) select *
+into #CleanedData
+from a 
+where dup_flag = 1
+
+
+
+
+
+--select customerid, datecreated as FirstTransaction, and CohortDate per first day of the month 
+
+select customer_id,
+		min(datecreated) as FirstTransaction,
+		DATEFROMPARTS(year(min(datecreated)), MONTH(min(datecreated)), 1) as CohortDate
+from #CleanedData
+group by Customer_Id
+order by CohortDate
+
+
+
+
+--make temp table for the retention
+
+select customer_id,
+		min(datecreated) as FirstTransaction,
+		DATEFROMPARTS(year(min(datecreated)), MONTH(min(datecreated)), 1) as CohortDate
+into #Retention
+from #CleanedData
+group by Customer_Id
+
+
+
+---create cohort index (age transaction)
+
+select a.*,
+(invoice_year - cohort_year) * 12 + (invoice_month - cohort_month) +1 as cohort_index
+from
+	(
+	select c.*,
+			cohortdate,
+			YEAR(DateCreated) as invoice_year,
+			MONTH(DateCreated) as invoice_month,
+			YEAR(cohortdate) as cohort_year,
+			MONTH(cohortdate) as cohort_month
+		from #CleanedData c
+		left join #Retention r
+			on c.customer_id = r.customer_id
+		) a
+
+
+
+
+
+---insert into new temp table
+
+select a.*,
+(invoice_year - cohort_year) * 12 + (invoice_month - cohort_month) +1 as cohort_index
+into #Cohort_Index 
+from
+	(
+	select c.*,
+			cohortdate,
+			YEAR(DateCreated) as invoice_year,
+			MONTH(DateCreated) as invoice_month,
+			YEAR(cohortdate) as cohort_year,
+			MONTH(cohortdate) as cohort_month
+		from #CleanedData c
+		left join #Retention r
+			on c.customer_id = r.customer_id
+		) a
+
+--group customer by cohort index (is also used for tableau)
+
+select distinct
+		customer_id,
+		CohortDate,
+		cohort_index,
+		count_data
+from #Cohort_Index
+order by count_data
+
+---count the index
+
+select distinct 
+	cohort_index
+from #Cohort_Index
+
+
+---create cohort table
+
+select *
+from
+	(
+	select distinct
+			Customer_Id,
+			CohortDate,
+			cohort_index
+	from #Cohort_Index
+	) tbl
+ pivot
+ (
+	count(customer_id)
+	for cohort_index in 
+	([1],[2],[3],[4],[5])
+) as pivottable
+order by CohortDate
+
+
+--convert into percentages (make a temp table first)
+
+select *
+into #cohort_pivot
+from
+	(
+	select distinct
+			Customer_Id,
+			CohortDate,
+			cohort_index
+	from #Cohort_Index
+	) tbl
+ pivot
+ (
+	count(Customer_Id)
+	for cohort_index in 
+	([1],[2],[3],[4],[5])
+) as pivottable
+order by CohortDate
+
+---convert to percentage 
+
+select *
+from #cohort_pivot
+order by CohortDate
+
+select  
+		1.0*[1]/[1]*100 as [1], 
+		1.0*[2]/[1]*100 as [2],
+		1.0*[3]/[1]*100 as [3],
+		1.0*[4]/[1]*100 as [4],
+		1.0*[5]/[1]*100 as [5]
+from #cohort_pivot
+order by CohortDate
