@@ -6,9 +6,18 @@
 
 ### In this Project I will be analyzing customer retention rate using cohort analysis
 
+What is Cohort Analysis?
+
 Cohort analysis is a behavioral analytics to see the customer behavior that shares the common criteria within a range of time. This analysis is usually used to give the insight on the customer base, to help the users to determine the most suitable market for the product launched. Cohort analysis works by breaking the raw data into related group before analysis. Cohort analysis can be classified into 3 types ; Time-Based, Segment-Based, Size-Based analysis. 
+
 I will be analyzing Time-Based analysis for this Cohort Project Analysis.
+
 In this Cohort Analysis I will be using bunch of Temp Table Functions for easier analysis.
+
+## Full Query for Data Cleaning Project
+**Check the Full Query for Data Cleaning Project [here](https://github.com/DenidyaFadiya/Cohort_Analysis_PakistanECommerce/blob/main/Full%20Query%20-%20Cohort%20Analysis%20Pakistan%20E-Commerce).**
+
+In this Data Cleaning project I will be cleaning data that I took from [Kaggle Data Source](https://www.kaggle.com/datasets/zusmani/pakistans-largest-ecommerce-dataset).
 
 ### Checking Duplicate Data
 Check any possible duplicate data using dup_flag function, if the dup_flag shows >1 meaning the data is duplicate. Hence why we need to filter the data using dup_flag = ‘1’.
