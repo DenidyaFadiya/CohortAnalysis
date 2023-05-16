@@ -2,7 +2,7 @@
 # SQL Project - Cohort Analysis Pakistan E-Commerce
 
 <p align="center">
-  <img width="550" height="400" src="https://user-images.githubusercontent.com/129844542/235351094-9f97e963-d961-42bd-8013-2c9212e3dc41.jpeg">
+  <img width="550" height="400" src="![Groceries](https://github.com/DenidyaFadiya/CohortAnalysis/assets/129844542/f9bc1cf3-3940-4f25-a7f6-fc55073934c6)">
 </p>
 
 This Project I will be analyzing customer retention rate using cohort analysis
